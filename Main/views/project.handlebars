@@ -14,11 +14,6 @@
         
         <textarea  id="project-comment" name="project-comment" >Enter comment</textarea>
       </div>
-     
-      {{!-- <div class="form-group">
-        <label for="project-desc">description:</label>
-        <textarea class="form-input" id="project-desc" name="project-desc"></textarea>
-      </div> --}}
       <div class="form-group">
         <button type="submit" class="btn btn-primary">Submit</button>
       </div>
@@ -26,25 +21,16 @@
  
       {{#if post.comments}}
       <div class="col-md-6 card">
-<div class="card-header" >
-   <h3>Current Projects:</h3>
-</div>
-<div class="card-body">
+        <div class="card-header" >
+          <h3>Current Comments:</h3>
+        </div>
+          <div class="card-body">
+            {{#each post.comments as |comment|}}
+            {{> comments}}
+            {{/each}}
+        </div>
+        {{/if}}
 
-        {{#each post.comments as |comment|}}
-       
-        {{> comments}}
-
-        {{/each}}
-
-
-</div>
-       
-      
-     
-      </div>
-      {{/if}}
-      </div>
 
     </form>
 
